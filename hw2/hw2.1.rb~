@@ -1,0 +1,14 @@
+
+# reopen numeric and modify
+class Numeric
+
+  def method_missing(method_id)
+    if method_id.to_s == 'euro'
+
+    end
+  end
+
+  def euros
+    return self * 1.292
+  end
+end
