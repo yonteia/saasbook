@@ -1,6 +1,28 @@
-load '../unit_test.rb'
+# from unit_test.rb (everything has to be in the same file for submitting)
+$trace_on = false
 
-$trace_on = true
+def put_line(string)
+  puts string
+  puts "\n"
+end
+
+def trace(string)
+  # todo: comment this out before shipping
+  if $trace_on
+    put_line string
+  end
+end
+# assert the test is true
+# @param testString the test name
+def assert_true(test, testString)
+  put_line (test ? :Passed!.to_s : :Failed!.to_s) + ' ' + testString + ' '
+end
+
+def assert_false(test, testString)
+  assert_true(!test, testString) # no reason to duplicate code
+end
+
+#$trace_on = true
 
 # reopen numeric and modify
 # hw 2, 1.a
